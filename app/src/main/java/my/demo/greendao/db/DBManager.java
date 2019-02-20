@@ -12,7 +12,7 @@ import my.demo.greendao.dao.UserDao;
 import my.demo.greendao.entity.User;
 
 
-public class DBManager extends Exception{
+public class DBManager {
     UserDao userDao;
     public DBManager(Context context) {
         DaoMaster.DevOpenHelper  helper = new DaoMaster.DevOpenHelper(context, "JackWaiting-db", null);

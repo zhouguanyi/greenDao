@@ -51,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick({R.id.add_btn, R.id.search_btn, R.id.delete_btn, R.id.search_all_btn})
     public void onClick(View view) {
         switch (view.getId()) {
+            //添加
             case R.id.add_btn:
                 User user = new User();
-                //user.setId(Long.valueOf(4)); //id是表中自增主键，不用填
+                //user.setId(Long.valueOf(8)); //id是表中自增主键
                 user.setName(nameEt.getText().toString());
                 user.setAge(Integer.parseInt(ageEt.getText().toString()));
                 try{
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
 
-
+                //查询
             case R.id.search_btn:
                 List<User> userList = greenDaoHelper.getDataByUserAge(Long.parseLong(searchEt.getText().toString()));
                 if(null == userList || userList.size() < 1){
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 //                Log.e(TAG, "userAge: " + sUser.getAge() );
                 break;
 
-
+                //删除
             case R.id.delete_btn:
                 try {
                     greenDaoHelper.deleteUserById(Long.parseLong(deleteEt.getText().toString()));
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
 
-
+                //查询全部
             case R.id.search_all_btn:
                 for(User user1 :greenDaoHelper.getUserAll()){
                     Log.e(TAG, "userId: " + user1.getId() + " userName: " + user1.getName() );
