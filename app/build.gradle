@@ -21,7 +21,7 @@ android {
     //greenDao
     greendao {
         //指定数据库schema版本号，迁移等操作会用到
-        schemaVersion 3
+        schemaVersion 4
         //DaoSession、DaoMaster以及所有实体类的dao生成的目录,默认为你的entity所在的包名
         //daoPackage 包名
         daoPackage 'my.demo.greendao.dao'

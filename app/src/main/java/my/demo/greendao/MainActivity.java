@@ -15,6 +15,10 @@ import butterknife.OnClick;
 import my.demo.greendao.db.DBManager;
 import my.demo.greendao.entity.User;
 
+/**
+ * 加密没做，要是做缓存，加密做不做都行
+ * 表结构更新后，没有做原始数据迁移，要升级数据库版本，否则会报错，数据库版本升级后之前的数据会肯定也没有了，
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
